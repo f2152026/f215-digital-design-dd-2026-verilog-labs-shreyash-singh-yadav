@@ -13,6 +13,7 @@ module FA_Gate(
   input  cin,
   output sum,
   output cout
+  
 );
   wire ps, pc1, pc2;
 
