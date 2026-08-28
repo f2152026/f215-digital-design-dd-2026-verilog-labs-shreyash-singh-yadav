@@ -56,6 +56,8 @@ module cla4(
   // TODO: your gate-level P/G, carry, and sum logic goes here.
   // (cout should be connected to c4.) Remember the delay on every gate.
 
+wire t1,t2,t3,t4,t5,t6,t7,t8,t9,t10;
+
 and #(2)(g0,a[0],b[0]);
 xor #(2)(p0,a[0],b[0]);
 
@@ -71,6 +73,21 @@ and(g2,a[2],b[2]);
 
  xor(p3,a[3],b[3]);
 and(g3,a[3],b[3]);
+
+and(t1,p0,cin);
+or(c1,t1,g0);
+and(t2,p1,g0);
+and(t3,p1,p0,cin);
+or(c2,g1,t2,t3);
+and(t4,p2,g1);
+and(t5,p2,p1,g0);
+and(t6,p2,p1,p0,cin);
+or(c3,g2,t4,t5,t6);
+and(t7,p3,g2);
+and(t8,p3,p2,g1);
+and(t9,p3,p2,p1,g0);
+and(t10,p3,p2,p1,p0,cin);
+or(cout,g3,t7,t8,t9,t10);
 
 xor #(2)(sum[0], p0, cin);
 xor #(2)(sum[1], p1, c1);
