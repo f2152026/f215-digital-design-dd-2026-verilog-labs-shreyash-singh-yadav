@@ -19,6 +19,28 @@
 // TODO -- Step 3: sum bits
 //   sum[i] = p[i] ^ c[i]     (c0 = cin)
 
+
+
+
+module FA_Gate(
+    input a,
+    input b,
+    input cin,
+    output sum,
+    output cout
+);
+
+    wire ps, pc1, pc2;
+
+    xor #(2)(ps, a, b);
+    and #(2)(pc1, a, b);
+    xor #(2)(sum, cin, ps);
+    and #(2)(pc2, cin, ps);
+    or  #(2)(cout, pc1, pc2);
+
+endmodule
+
+
 module cla4(
   input  [3:0] a,
   input  [3:0] b,
@@ -34,4 +56,27 @@ module cla4(
   // TODO: your gate-level P/G, carry, and sum logic goes here.
   // (cout should be connected to c4.) Remember the delay on every gate.
 
+and #(2)(g0,a[0],b[0]);
+xor #(2)(p0,a[0],b[0]);
+
+
+
+xor(p1,a[1],b[1]);
+and(g1,a[1],b[1]);
+
+
+ xor(p2,a[2],b[2]);
+and(g2,a[2],b[2]);
+
+
+ xor(p3,a[3],b[3]);
+and(g3,a[3],b[3]);
+
+xor #(2)(sum[0], p0, cin);
+xor #(2)(sum[1], p1, c1);
+xor #(2)(sum[2], p2, c2);
+xor #(2)(sum[3], p3, c3);
+
+
 endmodule
+
