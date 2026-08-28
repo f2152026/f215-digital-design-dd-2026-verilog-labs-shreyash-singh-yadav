@@ -26,6 +26,7 @@ module rca64(
 );
 
   // TODO: your 64-bit ripple-carry structure goes here.
+wire c[63:0];
 
 genvar i;
 generate
@@ -34,6 +35,6 @@ generate
   end
 endgenerate
 
-FA_Gate FA[63](.a(a[63]),.b(b[63]),.cin(c[63]), .sum(sum[63]),.cout(cout));
+FA_Gate FA64(.a(a[63]),.b(b[63]),.cin(c[63]), .sum(sum[63]),.cout(cout));
 
 endmodule
