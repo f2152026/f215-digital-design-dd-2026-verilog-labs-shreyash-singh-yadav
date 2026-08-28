@@ -37,4 +37,5 @@ cla4 block12(.a(a[51:48]), .b(b[51:48]), .cin(cin), .sum(sum[51:48]), .cout(c[13
 cla4 block13(.a(a[55:52]), .b(b[55:52]), .cin(cin), .sum(sum[55:52]), .cout(c[14]));
 cla4 block14(.a(a[59:56]), .b(b[59:56]), .cin(cin), .sum(sum[59:56]), .cout(c[15]));
 cla4 block15(.a(a[63:60]), .b(b[63:60]), .cin(c[15]), .sum(sum[63:60]), .cout(cout) );
+
 endmodule
