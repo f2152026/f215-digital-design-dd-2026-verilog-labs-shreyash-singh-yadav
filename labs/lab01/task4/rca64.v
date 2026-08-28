@@ -37,6 +37,6 @@ generate
   end
 endgenerate
 
-FA_Gate FA64(.a(a[63]),.b(b[63]),.cin(c[64]), .sum(sum[63]),.cout(cout));
+assign cout=c[64];
 
 endmodule
